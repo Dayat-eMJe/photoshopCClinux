@@ -3,88 +3,68 @@
 
 ![screenshot](images/Screenshot.png)
 
-![wine version](https://img.shields.io/badge/wine-%E2%96%B25.22-red) ![Tested on arch](https://img.shields.io/badge/Tested%20on-Archlinux-brightgreen) ![GitHub stars](https://img.shields.io/github/stars/Gictorbit/photoshopCClinux) ![rep size](https://img.shields.io/github/repo-size/gictorbit/photoshopCClinux) ![bash](https://img.shields.io/badge/bash-5.0-yellowgreen)
+![GitHub repo size](https://img.shields.io/github/license/Gictorbit/photoshopCClinux?style=flat) ![Tested on arch](https://img.shields.io/badge/Tested%20on-Archlinux-brightgreen)
+![GitHub stars](https://img.shields.io/github/stars/Gictorbit/photoshopCClinux?style=sad) ![rep size](https://img.shields.io/github/repo-size/gictorbit/photoshopCClinux) ![bash](https://img.shields.io/badge/bash-5.0.11-yellowgreen)
 </div>
 
-# Photoshop CC v19 installer for Linux
-This bash script helps you to install Photoshop CC version 19 on your Linux machine using wine behind the scene
-and sets some necessary components up for the best performance
+# photohop CC v19 installer for linux
+Scipt bash ini untuk menginstal Photoshop CC versi 19 di os Linux kalian menggunakan bantuan wine di belakang layar
+dan mengatur beberapa komponen yang diperlukan untuk kinerja terbaik
 
 ## :rocket: Features
-* downloads necessary components and installs them (`vcrun`, `atmlib`, `msxml`...)
-* downloads `photoshop.exe` installer
-* creates photoshop command and a desktop entry
-* wine dark mode
-* supports graphic cards like (`intel`, `Nvidia`)
-* saves the downloaded files in your cache directory
-* It's free and you will not need any license key
-* works on any Linux distribution
+* mengunduh komponen yang diperlukan dan memasangnya (`vcrun`,`atmlib`,`msxml`...)
+* mengunduh installer photoshop.exe dan instal secara otomatis
+* membuat perintah photoshop dan entri desktop
+* mengonfigurasi wine dengan mode gelap
+* mendeteksi berbagai kartu grafis seperti (`intel`, `Nvidia`...)
+* menyimpan file yang diunduh di direktori cache kalian
+* Ini gratis dan Anda tidak memerlukan lisensi key apa pun
+* bekerja pada semua distro Linux
 
 ## :warning: Requirements
-1- use a 64bit edition of your distro
-
-2-make sure the following packages are already installed on your Linux distro
+1- gunakan edisi 64bit dari distro kalian <br>
+2. pastikan wine sudah terinstall, jika kalian mendapatkan pesan error di wine sebelum menginstal photosop cc tetapi ini penting agar berhasil menginstal photoshop <br>
+3. pastikan packages di bawah ini sudah terpasang di distro Linux kalian
 * `wine`
-* `wine64`
 * `winetricks`
-* `md5sum`
+* `aria2`
 
-
-if they are not already installed you can install them using your package manager for example in arch Linux
+jika belum terinstal, Anda dapat menginstalnya menggunakan package manager kalian misalnya di Arch Linux
 ```bash
-sudo pacman -S wine winetricks
+sudo pacman -S wine aria2 winetricks
 ``` 
-3- make sure you have enough storage in your `/home` partition about `5 GiB`
+atau untuk user ubuntu / linux mint . kali linux kalian bisa menjalankan perintah
+```bash
+
+sudo apt-get install wine
+sudo apt-get install aria2 winetricks
+```
+3- make sure you have enogh storage in your `/home` partition about `5 GiB`
 > 1 GiB will be free after installation
 
-also you can install photoshop in diffrent directory
-
-4- make sure you have an internet connection and about 1.5 Gib traffic to download photoshop and its components
+4- make sure you have internet connection and about 1.5 Gib traffic for downloading photoshop and its components at first time
 
 ## :computer: Installation
-
-the installer scripts use a virtual drive of wine and makes a new `winprefix` for photoshop
-
-first of all, you need to clone the repository with this command:
-```bash
-git clone https://github.com/Gictorbit/photoshopCClinux.git
-cd photoshopCClinux
-```
-then you can easily run `setup.sh` script to install photoshop cc on your Linux distro
+you can easily run `setup.sh` script to install photoshop cc on your linux distro
 
 ```bash
 chmod +x setup.sh
 ./setup.sh
 ```
-
-you can use `-d` to specify the installation path, and `-c` for the cache directory.
-for example:
-```bash
-./PhotoshopSetup.sh -d /mnt/myfiles/photoshop
-```
-or
-```bash
-./PhotoshopSetup.sh -d /mnt/myfiles/photoshop -c /mnt/cache
-```
-when no options are given, the installer script will use the default path, 
-the uninstaller script and others will detect your custom path so there is no problem,
-I recommend using the `-d` option  and having the default cache directory.
-this feature is currently being tested, and will be added to `setup.sh` later
-
-
+recommendation  number 1 use with winetricks
 <div align="center" class="tip" markdown="1" style>
 
 ![setup-screenshot](images/setup-screenshot.png)
 </div>
 
-during installation please pay attention to the script messages
+during installation please pay attention to script messages
 
 > **NOTE :** make sure OS version in wine is on windows 7
 
-installer script use `winetricks` to install necessary components
+
 
 ## :wine_glass: wineprefix Configuration
-if you need to configure the wineprefix of photoshop you can use `winecfg.sh` script just run the command below
+if you need to configure wineprefix of photoshop you can use `winecfg.sh` script just run below command
 ```bash
 chmod +x winecfg.sh
 ./winecfg.sh
@@ -95,11 +75,11 @@ chmod +x winecfg.sh
 <summary>:sparkles: Liquify Tools</summary>
 as you know photoshop has many useful tools like `Liquify Tools`.</br>
 
-if you get some errors while working with these tools,
+if you get some errors during working with these tools
 It may because of the graphics card.</br>
 
 photoshop uses the `GPU` to process these tools so before using these tools make sure that your graphics card `(Nvidia, AMD)` is configured correctly in your Linux machine.
-</br>The other solution is you can configure photoshop to use your `CPU` for image processing. to do that, follow the steps below:
+</br>The other solution is you can configure photoshop to use `CPU` for image processing. to do that, follow the below steps:
 
 * go to edit tab and open `preferences` or `[ctrl+K]`
 * then go to the `performance` tab
@@ -112,7 +92,7 @@ photoshop uses the `GPU` to process these tools so before using these tools make
 <details>
 <summary>:camera: Adobe Camera Raw</summary>
 
-another useful adobe software is `camera raw` if you want to work with it beside photoshop you must install it separately to do this, after photoshop installation run `cameraRawInstaller.sh` script with commands below:
+another useful adobe software is `camera raw` if you want to work with it beside photoshop you must install it separately to do this, after photoshop installation run `cameraRawInstaller.sh` script with below commands:
 ```bash
 chmod +x cameraRawInstaller.sh
 ./cameraRawInstaller.sh
@@ -128,7 +108,7 @@ then restart photoshop.you can open it from
 </details>
 
 ## :hotsprings: Uninstall
-to uninstall photoshop you can use the uninstaller script with commands below
+for uninstall photoshop you can use uninstaller script with below commands
 
 ```bash
 chmod +x uninstaller.sh
@@ -138,11 +118,3 @@ chmod +x uninstaller.sh
 
 ## :bookmark: License
 ![GitHub](https://img.shields.io/github/license/Gictorbit/photoshopCClinux?style=for-the-badge)
-
----
-<a href="https://poshtiban.com">
-<img src="images/poshtibancom.png" width="25%"> 
-</a>
-<a href="https://github.com/Gictorbit/illustratorCClinux">
-<img src="https://github.com/Gictorbit/illustratorCClinux/raw/master/images/AiIcon.png" width="9%">
-</a>
