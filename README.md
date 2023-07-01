@@ -8,7 +8,7 @@
 </div>
 
 # photohop CC v19 installer for linux
-Scipt bash ini untuk menginstal Photoshop CC versi 19 di os Linux kalian menggunakan bantuan wine di belakang layar
+Scipt bash ini dipakai untuk menginstal Photoshop CC versi 19 di os Linux kalian menggunakan bantuan wine di belakang layar
 dan mengatur beberapa komponen yang diperlukan untuk kinerja terbaik
 
 ## :rocket: Features
@@ -29,7 +29,7 @@ dan mengatur beberapa komponen yang diperlukan untuk kinerja terbaik
 * `winetricks`
 * `aria2`
 
-jika belum terinstal, Anda dapat menginstalnya menggunakan package manager kalian misalnya di Arch Linux
+jika belum terinstal, kalian bisa menginstalnya menggunakan package manager kalian misalnya di Arch Linux
 ```bash
 sudo pacman -S wine aria2 winetricks
 ``` 
@@ -39,32 +39,32 @@ atau untuk user ubuntu / linux mint . kali linux kalian bisa menjalankan perinta
 sudo apt-get install wine
 sudo apt-get install aria2 winetricks
 ```
-3- make sure you have enogh storage in your `/home` partition about `5 GiB`
-> 1 GiB will be free after installation
+3- Pastikan kalian memiliki ruang penyimpanan yang cukup di partisi `/home` sebesar `5 GiB`
+> 1 GiB akan terpakai setelah pemasangan
 
-4- make sure you have internet connection and about 1.5 Gib traffic for downloading photoshop and its components at first time
+4- Pastikan kalian memiliki koneksi internet dan lalu lintas sekitar 1,5 Gib untuk mengunduh photoshop dan semua komponen yang dibutuhkan untuk pertama kali instalasi
 
 ## :computer: Installation
-you can easily run `setup.sh` script to install photoshop cc on your linux distro
+Kalian bisa dengan mudah menjalankan skrip `setup.sh` untuk menginstal photoshop cc di distro linux kalian
 
 ```bash
 chmod +x setup.sh
 ./setup.sh
 ```
-recommendation  number 1 use with winetricks
+rekomendasi nomor 1 menggunakan winetricks
 <div align="center" class="tip" markdown="1" style>
 
 ![setup-screenshot](images/setup-screenshot.png)
 </div>
 
-during installation please pay attention to script messages
+selama tahap instalasi harap perhatikan pesan notifikasi dari script
 
-> **NOTE :** make sure OS version in wine is on windows 7
+> **NOTE :** pastikan versi OS di wine adalah windows 7
 
 
 
 ## :wine_glass: wineprefix Configuration
-if you need to configure wineprefix of photoshop you can use `winecfg.sh` script just run below command
+jika kalian perlu mengonfigurasi wineprefix dari photoshop, kalian bisa menggunakan perintah `winecfg.sh` dan cukup jalankan perintah di bawah ini
 ```bash
 chmod +x winecfg.sh
 ./winecfg.sh
@@ -73,17 +73,17 @@ chmod +x winecfg.sh
 
 <details>
 <summary>:sparkles: Liquify Tools</summary>
-as you know photoshop has many useful tools like `Liquify Tools`.</br>
+seperti yang kalian ketahui photoshop memiliki banyak alat yang berguna seperti `Liquify Tools`.</br>
 
-if you get some errors during working with these tools
-It may because of the graphics card.</br>
+Jika kalian mendapatkan beberapa pesan error selama bekerja dengan tools ini
+Mungkin error dikarenakan graphics card.</br>
 
-photoshop uses the `GPU` to process these tools so before using these tools make sure that your graphics card `(Nvidia, AMD)` is configured correctly in your Linux machine.
-</br>The other solution is you can configure photoshop to use `CPU` for image processing. to do that, follow the below steps:
+photoshop menggunakan `GPU` untuk menjalankan tools ini, jadi sebelum menggunakan tools ini, pastikan graphics card kalian `(Nvidia, AMD)` telah dikonfigurasi dengan benar di mesin Linux kalian.
+</br>Solusi lainnya adalah kalian bisa mengonfigurasi photoshop untuk menggunakan `CPU` untuk pemrosesan gambar. untuk melakukannya, ikuti langkah-langkah di bawah ini:
 
-* go to edit tab and open `preferences` or `[ctrl+K]`
-* then go to the `performance` tab
-* in the graphics processor settings section, uncheck `Use graphics processor`
+* buka tab edit dan buka `preferences` or `[ctrl+K]`
+* kemuan kalian kr tab `performance`
+* di bagian pengaturan graphics processor, hapus centang `Use graphics processor`
 
 ![](https://user-images.githubusercontent.com/34630603/80861998-117b7a80-8c87-11ea-8f56-079f43dfafd9.png)
 </details>
